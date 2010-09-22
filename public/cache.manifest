@@ -16,6 +16,8 @@ CACHE:
 /css/antiscreen.css
 /css/core.css
 /css/handheld.css
+/css/ie/ie6.css
+/css/ie/ie7.css
 /css/reset.css
 /css/screen.css
 
@@ -29,4 +31,8 @@ CACHE:
 
 # Images
 
-# Generated: September 22 2010 14:35:49
+
+# Additions
+/index.html
+
+# Generated: September 22 2010 14:58:59

@@ -22,9 +22,14 @@ $dirs = array(
     "Images"     => "/img",
 );
 
+// additional individual files
+$additions = array(
+    "/index.html",
+);
+
 // do not cache, relative to PATH
 // for the NETWORK property
-$ignores = array(
+$network = array(
     "/.htaccess",
     "/robots.txt",
     "/cache.manifest", // for Firefox, I think
@@ -71,12 +76,12 @@ if (!empty($fallback))
     echo "/ {$fallback}\n\n";
 }
 
-if (!empty($ignores))
+if (!empty($network))
 {
     echo "NETWORK:\n\n";
-    foreach ($ignores as $ignored)
+    foreach ($network as $item)
     {
-        echo "$ignored\n";
+        echo "$item\n";
     }
     echo "\n";
 }
@@ -94,7 +99,17 @@ foreach ($dirs as $name => $dir)
     echo "\n";
 }
 
-echo "# Generated: " . date ("F d Y H:i:s", time()) . "\n";
+if (!empty($additions))
+{
+    echo "\n# Additions\n";
+    foreach ($additions as $addition)
+    {
+        echo "$addition\n";
+    }
+    echo "\n";
+}
+
+echo "# Generated: " . date("F d Y H:i:s", time()) . "\n";
 
 $contents = ob_get_clean();
 $fp = fopen(FILE_TO_WRITE, 'w');
