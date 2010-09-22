@@ -1,0 +1,10 @@
+AddType text/cache-manifest .manifest manifest
+
+RewriteEngine On
+RewriteBase /
+
+RedirectMatch 404 /\\.svn(/|$)
+
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule .* index.php [L,NC]
