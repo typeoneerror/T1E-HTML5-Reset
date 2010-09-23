@@ -1,7 +1,30 @@
-AddType text/cache-manifest .manifest manifest
+AddType text/cache-manifest  .manifest
+
+AddType video/mp4   .mp4 .mp4v .mpg4 .m4v
+AddType video/ogg   .ogv
+AddType video/webm  .webm
+
+AddType image/svg+xml  .svg .svgz
+
+AddType application/vnd.ms-fontobject  .eot
+AddType font/ttf                       .ttf
+AddType font/otf                       .otf
+AddType font/x-woff                    .woff
+
+<FilesMatch "\.(ttf|otf|eot|woff|font.css)$">
+  <IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+  </IfModule>
+</FilesMatch>
+
+AddDefaultCharset utf-8
+AddCharset utf-8 .html .css .js .xml .json .rss
 
 RewriteEngine On
 RewriteBase /
+
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
 
 RedirectMatch 404 /\\.svn(/|$)
 
