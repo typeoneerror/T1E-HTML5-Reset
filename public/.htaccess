@@ -12,9 +12,9 @@ AddType font/otf                       .otf
 AddType font/x-woff                    .woff
 
 <FilesMatch "\.(ttf|otf|eot|woff|font.css)$">
-  <IfModule mod_headers.c>
-    Header set Access-Control-Allow-Origin "*"
-  </IfModule>
+    <IfModule mod_headers.c>
+        Header set Access-Control-Allow-Origin "*"
+    </IfModule>
 </FilesMatch>
 
 AddDefaultCharset utf-8
@@ -27,6 +27,11 @@ RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
 RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
 
 RedirectMatch 404 /\\.svn(/|$)
+
+# Serve XHTML to Firefox 2
+RewriteCond %{REQUEST_URI} \.html$
+RewriteCond %{HTTP_USER_AGENT} rv:1\.(([1-8]|9pre|9a|9b[0-4])\.[0-9.]+).*Gecko
+RewriteRule .* - [T=application/xhtml+xml]
 
 #RewriteCond %{REQUEST_FILENAME} !-f
 #RewriteCond %{REQUEST_FILENAME} !-d
