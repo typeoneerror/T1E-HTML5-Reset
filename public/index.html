@@ -1,67 +1,82 @@
 <!DOCTYPE html>
-<html dir="ltr" lang="en" manifest="/cache.manifest" xmlns="http://www.w3.org/1999/xhtml">
+<!--[if IE 6]><html class="ie6 old" dir="ltr" lang="en" manifest="/cache.manifest" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml"><![endif]-->
+<!--[if IE 7]><html class="ie7 old" dir="ltr" lang="en" manifest="/cache.manifest" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml"><![endif]-->
+<!--[if IE 8]><html class="ie8 old" dir="ltr" lang="en" manifest="/cache.manifest" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml"><![endif]-->
+<!--[if !(IE 6) | !(IE 7) | !(IE 8)  ]><!-->
+<html dir="ltr" lang="en" manifest="/cache.manifest" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
+<!--<![endif]-->
 <!--xmlns for Firefox 2.x rendering-->
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1"/>
     <meta charset="utf-8"/>
 
+    <!-- basic meta-data -->
     <meta name="title" content="Title"/>
     <meta name="description" content="Description"/>
     <meta name="keywords" content="Keywords"/>
-    <meta name="viewport" content="width=device-width,user-scalable=yes,target-densitydpi=device-dpi"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes,target-densitydpi=device-dpi"/>
+
+    <!-- iOS: treat bookmarked site as a full-screen app -->
     <meta name="apple-mobile-web-app-capable" content="yes"/>
     <meta name="apple-mobile-web-app-statuspoor thin-bar-style" content="black"/>
 
-    <meta name="og:title" content="Title"/>
-    <meta name="og:site_name" content="Site"/>
-    <meta name="og:type" content="company"/>
-    <meta name="og:image" content="http://website.com/img/og-image.jpg"/>
-    <meta name="og:url" content="http://website.com/"/>
-    <meta name="og:description" content="Description"/>
-    <meta name="og:email" content="email@website.com"/>
-    <meta name="og:phone_number" content="123-456-7890"/>
+    <!-- Facebook Open Graph meta-data -->
+    <meta property="og:title" content="Title"/>
+    <meta property="og:site_name" content="Site"/>
+    <meta property="og:type" content="company"/>
+    <meta property="og:image" content="http://website.com/img/og-image.jpg"/>
+    <meta property="og:url" content="http://website.com/"/>
+    <meta property="og:description" content="Description"/>
+    <meta property="og:email" content="email@website.com"/>
+    <meta property="og:phone_number" content="123-456-7890"/>
+    <meta property="fb:admins" content="1234567890"/>
+    <meta property="fb:app_id" content="1234567890"/>
 
     <title>HTML5 Reset</title>
 
-    <link rel="image_src" href="http://website.com/img/og-image.jpg"/>
+    <!-- apple touch and old-style Facebook image-->
     <link rel="apple-touch-icon-precomposed" media="screen and (resolution: 163dpi)" href="/img/apple-touch-icon.png"/>
     <link rel="apple-touch-icon-precomposed" media="screen and (resolution: 326dpi)" href="/img/apple-touch-icon-retina.png"/>
+    <link rel="image_src" href="http://website.com/img/og-image.jpg"/>
 
     <link rel="stylesheet" href="/css/reset.css" media="all"/>
-    <link rel="stylesheet" href="/css/core.css" media="all"/>
-    <link rel="stylesheet" href="/css/handheld.css" media="only screen and (max-device-width:480px)"/>
-    <link rel="stylesheet" href="/css/handheld.css" media="handheld"/>
+    <link rel="stylesheet" href="/css/screen.css" media="all"/>
+    <link rel="stylesheet" href="/css/print.css" media="print"/>
 
-    <!--[if IE 6]><link rel="stylesheet" href="/css/ie/ie6.css" media="all"/><![endif]-->
-    <!--[if IE 7]><link rel="stylesheet" href="/css/ie/ie7.css" media="all"/><![endif]-->
-
-    <!--[if (gte IE 5.5)&(lte IE 8)]><script type="text/javascript" src="/js/selectivizr.js"></script><![endif]-->
+    <!--[if (gte IE 5.5)&(lte IE 8)]><script src="/js/selectivizr.js"></script><![endif]-->
 
     <script src="/js/jquery.js"></script>
     <script src="/js/jquery.address.js"></script>
     <script src="/js/modernizr.js"></script>
     <script src="/js/application.js"></script>
 </head>
-<body>
-    <header>
-        <hgroup>
-            <h1>T1E HTML5 Reset</h1>
-            <h2>A Mobile and Facebook ready HTML5 Bootstrap</h2>
-        </hgroup>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-            </ul>
-        </nav>
-    </header>
-    <section>
-        <article>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
-            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-            voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-            cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </article>
-    </section>
+<body class="home">
+    <div class="page">
+        <header>
+            <hgroup>
+                <h1>T1E HTML5 Reset</h1>
+                <h2>A Mobile and Facebook ready HTML5 Bootstrap</h2>
+            </hgroup>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section>
+            <article>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+                    ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                    laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                    voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                    cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+            </article>
+        </section>
+        <footer>
+            Lorem ipsum dolor sit amet.
+        </footer>
+    </div>
 </body>
 </html>

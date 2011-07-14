@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="project_name" default="build" basedir=".">
+
+<!--
+
+An ANT task for building the CSS and Javascript files into
+single files and compressing them, reducing requests and
+file sizes dramatically.
+
+-->
+
+    <property file="build.properties"/>
+
+    <!--set some properties-->
+    <property name="yuic" location="${YUI_COMPRESSOR}"/>
+    <property name="build" location="build"/>
+
+    <property name="css" location="css"/>
+    <property name="js" location="js"/>
+
+    <property name="css_out" location="css"/>
+    <property name="js_out" location="js"/>
+
+    <target name="init">
+        <mkdir dir="${build}"/>
+    </target>
+
+    <target name="build" depends="init,minify.js,minify.css,clean"/>
+
+    <target name="clean" description="Clean up build">
+        <delete dir="${build}"/>
+    </target>
+
+    <!--concatenate javascript-->
+    <target name="concat.js" description="Stick all the JS together">
+         <concat destfile="build/application.js">
+            <filelist dir="${js}" files="jquery.min.js,application.js"/>
+        </concat>
+    </target>
+
+    <!--minify javascript-->
+    <target name="minify.js" depends="concat.js" description="Minify JavaScript using YUI Compressor">
+        <apply executable="java" parallel="false">
+            <fileset dir="build" includes="*.js"/>
+            <arg line="-jar"/>
+            <arg path="${yuic}"/>
+            <srcfile/>
+            <arg line="-o"/>
+            <mapper type="glob" from="*.js" to="${js}/*.min.js"/>
+            <targetfile/>
+        </apply>
+    </target>
+
+    <!--concatenate css-->
+    <target name="concat.css" description="Stick all the CSS together">
+         <concat destfile="build/core.css">
+            <filelist dir="${css}" files="reset.css,screen.css,respond.css"/>
+        </concat>
+    </target>
+
+    <!--minify concatenated css-->
+    <target name="minify.css" depends="concat.css" description="Minify CSS using YUI Compressor">
+        <apply executable="java" parallel="false">
+            <fileset dir="build" includes="*.css"/>
+            <arg line="-jar"/>
+            <arg path="${yuic}"/>
+            <srcfile/>
+            <arg line="-o"/>
+            <mapper type="glob" from="*.css" to="${css_out}/*.min.css"/>
+            <targetfile/>
+        </apply>
+    </target>
+
+</project>

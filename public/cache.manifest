@@ -9,25 +9,21 @@ NETWORK:
 /.htaccess
 /robots.txt
 /cache.manifest
+/css/print.css
 
 CACHE:
 
 # CSS
-/css/antiscreen.css
-/css/core.css
-/css/handheld.css
-/css/ie/ie6.css
-/css/ie/ie7.css
+/css/print.css
 /css/reset.css
 /css/screen.css
 
 # Javascript
 /js/application.js
-/js/html5.js
-/js/jquery.address.js
-/js/jquery.js
-/js/modernizr.js
-/js/selectivizr.js
+/js/jquery.address.min.js
+/js/jquery.min.js
+/js/modernizr.min.js
+/js/selectivizr.min.js
 
 # Images
 
@@ -35,4 +31,4 @@ CACHE:
 # Additions
 /index.html
 
-# Generated: September 22 2010 14:58:59
+# Generated: July 13 2011 22:22:15

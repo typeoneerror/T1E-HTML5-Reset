@@ -1,0 +1,6 @@
+# Rename this file to build.properties to allow build.xml to reference it
+# This file would not be checked into version control allowing other workers
+# on the project to have their own local build properties.
+
+# Path to YUI compressor - uses 2.4.2
+YUI_COMPRESSOR = /path/to/your/yuicompressor-2.4.2/build/yuicompressor-2.4.2.jar
