@@ -1,2 +1,85 @@
 /* Stylesheet for responsive @media queries
+   From Andy Clarke's 320 and up:
+   http://stuffandnonsense.co.uk/projects/320andup/
 --------------------------------------------------------------------*/
+
+/* Print only
+--------------------------------------------------------------------*/
+@media print {
+    * {
+        background:transparent !important;
+        color:black !important;
+        text-shadow:none !important;
+        filter:none !important;
+        -ms-filter:none !important;
+    }
+
+    a[href]:after {
+        content:" (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content:" (" attr(title) ")";
+    }
+
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content:"";
+    }
+
+    pre, blockquote {
+        border:1px solid #999;
+        page-break-inside:avoid;
+    }
+
+    thead {
+        display:table-header-group;
+    }
+
+    tr, img {
+        page-break-inside:avoid;
+    }
+
+    @page {
+        margin:.5cm;
+    }
+
+    p, h2, h3 {
+        orphans:3;
+        widows:3;
+    }
+
+    h2, h3 {
+        page-break-after:avoid;
+    }
+}
+
+/* 480px
+--------------------------------------------------------------------*/
+@media only screen and (min-width:480px) {
+
+}
+
+/* 768px
+--------------------------------------------------------------------*/
+@media only screen and (min-width:768px) {
+
+}
+
+/* 992px
+--------------------------------------------------------------------*/
+@media only screen and (min-width:992px) {
+
+}
+
+/* 1382px
+--------------------------------------------------------------------*/
+@media only screen and (min-width:1382px) {
+
+}
+
+/* @2x
+--------------------------------------------------------------------*/
+@media only screen and (-webkit-min-device-pixel-ratio:2), only screen and (min-device-pixel-ratio:2) {
+
+}

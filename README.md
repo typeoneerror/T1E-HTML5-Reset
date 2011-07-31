@@ -10,11 +10,10 @@ Features
 --------
 
 * CSS reset including HTML5 elements, clearfix, et al.
-* rem's HTML5 shiv for making IE recognize elements for styling.
 * Viewport and iOS specific metadata for creating fullscreen home screen apps and icons.
 * Metadata for basic Facebook implementation.
 * jQuery & jQuery Address.
-* Modernizr for testing for cool shit.
+* Modernizr for testing for cool shit and HTML5 support.
 * Selectivizr for pseudo-selectors (:last-child, et al) in IE.
 * A PHP-based cache.manifest generator for using HTML5's offline support.
 * Conditionals for IE6 and 7.

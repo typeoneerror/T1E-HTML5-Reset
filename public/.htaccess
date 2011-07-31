@@ -148,5 +148,8 @@ RewriteRule .* - [T=application/xhtml+xml]
 # RewriteCond %{REQUEST_FILENAME} !-f
 # RewriteCond %{REQUEST_FILENAME} !-d
 
-#rewrite to bootstrap index
-# RewriteRule ^.*$ index.php [L,QSA]
+# rewrite to bootstrap index
+# RewriteRule ^.*$ index.php [NC,L,QSA]
+
+# or rewrite /name to {name}.html
+RewriteRule ^([^\.]+)$ $1.html [NC,L,QSA]
